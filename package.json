@@ -19,9 +19,11 @@
   "homepage": "https://github.com/kungfunk/torrent-e#readme",
   "devDependencies": {
     "electron": "^1.6.5",
-    "electron-rebuild": "^1.5.7"
+    "electron-rebuild": "^1.5.7",
+    "standard": "^10.0.2"
   },
   "dependencies": {
+    "magnet-uri": "^5.1.7",
     "torrent-stream": "^1.0.3"
   }
 }
