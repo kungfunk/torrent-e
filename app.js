@@ -19,8 +19,8 @@ const Torrent = (magnet) => {
     magnetLink: magnet,
     filesize: 0,
     downloaded: 0,
-    getTemplate: function() {
-      let torrentItem = document.createElement('div');
+    getTemplate: function () {
+      let torrentItem = document.createElement('div')
       torrentItem.id = `torrent-id-${this.id}`
       torrentItem.className = 'torrent-item'
       torrentItem.innerHTML = `<div id="name">${this.name}</div>
@@ -29,18 +29,18 @@ const Torrent = (magnet) => {
       return torrentItem
     },
 
-    setFilesize: function() {
+    setFilesize: function () {
       this.files.forEach((file) => {
-          this.filesize += file.length
+        this.filesize += file.length
       })
     },
 
-    updateDownloadedBytes: function(bytes) {
+    updateDownloadedBytes: function (bytes) {
       this.downloaded = bytes
       document.getElementById(`downloaded-bytes-counter-${id}`).innerHTML = bytes
     },
 
-    start: function() {
+    start: function () {
       this.files.forEach((file) => {
         this.filesize += file.length
         file.createReadStream()
@@ -79,7 +79,6 @@ const readMagnetLink = () => {
   })
 }
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('magnet-link-submit').addEventListener('click', readMagnetLink);
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('magnet-link-submit').addEventListener('click', readMagnetLink)
 })

@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "electron main.js",
+    "lint:js": "./node_modules/.bin/standard",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "lint:js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kungfunk/torrent-e.git"
@@ -20,6 +24,7 @@
   "devDependencies": {
     "electron": "^1.6.5",
     "electron-rebuild": "^1.5.7",
+    "pre-commit": "^1.2.2",
     "standard": "^10.0.2"
   },
   "dependencies": {
